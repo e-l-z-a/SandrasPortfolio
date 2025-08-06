@@ -1,0 +1,105 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .carousel {
+        position: relative;
+    }
+
+    .carousel-item .card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        padding: 20px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: #000;
+        border-radius: 50%;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        cursor: pointer;
+        width: 5%;
+    }
+
+    .carousel-control-prev {
+        left: 10px;
+    }
+
+    .carousel-control-next {
+        right: 10px;
+    }
+
+    .carousel-inner {
+        display: flex;
+    }
+
+    .carousel-item {
+        flex: 0 0 100%;
+        transition: transform 0.5s ease;
+    }
+
+    h2 {
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+
+    .btn-dark, .btn-primary {
+        border-radius: 20px;
+        padding: 8px 16px;
+        font-weight: 600;
+    }
+
+    .proj-title {
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-bottom: 25px;
+        color: mediumseagreen;
+        font-family: 'Courier New', monospace;
+    }
+</style>
+
+<h2 class="proj-title">Personal Projects</h2>
+
+<div id="projectCarousel" class="carousel slide" data-bs-interval="10000">
+    <div class="carousel-inner">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var project = Model[i];
+            <div class="carousel-item @(i == 0 ? "active" : "")">
+                <div class="card p-4 shadow-sm">
+                    
+                    <div>
+                        <h4><b>@project.Title</b></h4>&nbsp;
+                        <a href="@project.GitHubLink" class="btn btn-dark btn-sm me-2" target="_blank">GitHub</a>
+                        @if (!string.IsNullOrEmpty(project.LiveDemoLink))
+                        {
+                            <a href="@project.LiveDemoLink" class="btn btn-primary btn-sm" target="_blank">Live Demo</a>
+                        }
+                    </div>
+                    <p></p>
+                    <p>@Html.Raw(project.Description)</p>
+                    <p> @Html.Raw(project.Technologies)</p>
+                    
+                </div>
+            </div>
+        }
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
