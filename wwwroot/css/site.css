@@ -6,6 +6,33 @@ html {
   html {
     font-size: 16px;
   }
+    .navbar ul {
+        display: flex;
+        gap:20px;
+    }
+    .menu-toggle{
+        display:none;
+    }
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction:row;
+        align-items:flex-start;
+    }
+    .navbar ul{
+        display:flex;
+        flex-direction:row;
+        gap:1rem;
+        overflow-x:auto;
+        white-space:nowrap;
+        -webkit-overflow-scrolling:touching;
+        padding:0;
+        margin:0;
+        list-style:none;
+    }
+    .navbar li{
+        flex:0 0 auto;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
