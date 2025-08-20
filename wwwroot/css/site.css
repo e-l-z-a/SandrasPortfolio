@@ -15,21 +15,39 @@ html {
     }
 }
 @media (max-width: 768px) {
+    .contact-container {
+        font-family: 'Courier New', monospace;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    .skill-card {
+        width: 100%;
+        min-height: 180px;
+        background-color: red;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        margin: 0 10px;
+    }
+    nav.navbar {
+        background-color: black;
+    }
     .navbar {
         flex-direction:row;
         align-items:flex-start;
     }
-    .navbar ul{
-        display:flex;
-        flex-direction:row;
-        gap:1rem;
-        overflow-x:auto;
-        white-space:nowrap;
-        -webkit-overflow-scrolling:touching;
-        padding:0;
-        margin:0;
-        list-style:none;
-    }
+        .navbar ul {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touching;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            background-color: black;
+        }
     .navbar li{
         flex:0 0 auto;
     }
@@ -88,7 +106,7 @@ body {
     .grid-card span {
         font-size: 1.5rem;
         font-weight: 500;
-        background: linear-gradient(to right, #98bf64,#03c04a);
+       
         background-clip: text;
         color: transparent;
     }

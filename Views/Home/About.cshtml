@@ -4,77 +4,69 @@
 }
 
 <style>
+    body {
+        background-color: black;
+    }
+
     .section-title {
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin-bottom: 25px;
-    color: mediumseagreen;
-    font-family: 'Courier New', monospace;
-       
-}
-
-.skill-card {
-    width: 200px;
-    min-height: 180px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    margin:0 10px;
-    
-}
-
-.skill-card:hover {
-    transform: scale(1.05);
-}
-
-
-
-.carousel-inner {
-    padding: 20px 0;
-    display:flex;
- 
-    overflow:visible;
-    
-    position:relative;
-}
-.corousel-item{
-    
-    flex:0 0 60%;
-    margin:0 10px;
-    
-    transition:transform 0.5s ease;
-}
-.carousel-inner::before,
-.carousel-inner::after{
-    content:"";
-    position:absolute;
-    top:0;
-    bottom:0;
-    width:10%;
-    background:linear-gradient(to right,black 0%,transparent 100%);
-    z-index:1;
-
-}
-
-    carousel-inner::before{
-        left:0;
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-bottom: 25px;
+        color: mediumseagreen;
+        font-family: 'Courier New', monospace;
     }
+
+    .skill-card {
+        width: 200px;
+        min-height: 180px;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        margin: 0 10px;
+    }
+
+        .skill-card:hover {
+            transform: scale(1.05);
+        }
+
+
+
+    .carousel-inner {
+        padding: 20px 0;
+        display: flex;
+        overflow: visible;
+        position: relative;
+    }
+
+    .corousel-item {
+        flex: 0 0 60%;
+        margin: 0 10px;
+        transition: transform 0.5s ease;
+    }
+
+    .carousel-inner::before,
     .carousel-inner::after {
-    right:0;
-    transform:scaleX(-1);
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 10%;
+        z-index: 1;
     }
 
-.carousel-control-prev,
-.carousel-control-next {
+
+
+    .carousel-control-prev,
+    .carousel-control-next {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         z-index: 2;
         cursor: pointer;
         width: 5%;
-    display:flex;
-}
+        display: flex;
+    }
 
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
@@ -93,14 +85,13 @@
 
     .about-container {
         max-width: 900px;
-        margin: 80px auto;
         padding: 40px;
         background: black;
         border-radius: 15px;
         box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
 
- 
+
 
     .section-text {
         font-size: 0.9rem;
@@ -126,34 +117,34 @@
         <p>Right now, I’m focused on improving my skills, building projects I’m proud of, and finding opportunities where I can grow as a developer</p>
         <p>Let’s connect and build something great!</p>
     </div>
-   <h2 class="section-title">Skills</h2>
+    <h2 class="section-title">Skills</h2>
 
-<div id="skillCarousel" class="carousel slide" data-bs-interval="false">
-    <div class="carousel-inner d-flex justify-content-center ">
-        @for (int i = 0; i < Model.Count; i ++)
-        {
+    <div id="skillCarousel" class="carousel slide" data-bs-interval="false">
+        <div class="carousel-inner d-flex justify-content-center ">
+            @for (int i = 0; i < Model.Count; i++)
+            {
                 var skill = Model[i];
                 <div class="carousel-item @(i == 0 ? "active" : "")">
-                <div class="card skill-card  p-3">
-                    
-                        
-                            <h5 class="mb-1"><b>@skill.Name</b></h5>
-                            <div class="text-left">@Html.Raw(skill.Description)</div>
-                        </div>
-                   
-            </div>
-        }
-    </div>
+                    <div class="card skill-card  p-3">
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#skillCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#skillCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
+
+                        <h5 class="mb-1"><b>@skill.Name</b></h5>
+                        <div class="text-left">@Html.Raw(skill.Description)</div>
+                    </div>
+
+                </div>
+            }
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#skillCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#skillCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 
 
 </div>
