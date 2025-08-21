@@ -8,14 +8,58 @@
 
     <link rel="stylesheet" href="~/css/site.css" />
     <style>
+      
+
+       
+
+        .bg {
+            animation: slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, #343434 50%, #000 50%);
+            bottom: 0;
+            left: -50%;
+            opacity: .5;
+            position: fixed;
+            right: -50%;
+            top: 0;
+            z-index: -1;
+        }
+
+        .bg2 {
+            animation-direction: alternate-reverse;
+            animation-duration: 6s;
+        }
+
+        .bg3 {
+            animation-duration: 7s;
+        }
+
+        
+
+        h1 {
+            font-family: monospace;
+        }
+
+        @@keyframes slide {
+            0%
+
+        {
+            transform: translateX(-25%);
+        }
+
+        100% {
+            transform: translateX(25%);
+        }
+
+        }
+
+
+
         body {
            
             font-family: 'Courier New', monospace;
             font-color:forestgreen
         }
-        ul.navbar-nav.ms-auto{
-            background-color:black;
-        }
+        
 
         nav.navbar {
             background-color: black;
@@ -58,31 +102,40 @@
             padding: 8px 10px;
             flex: 1 1 auto;
         }
-           
+           li.Resume{
+               color:whitesmoke;
+           }
+           li.left{
+               float:left;
+           }
 
     </style>
 </head>
 <body class="@ViewData["BodyClass"]">
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
+
             <div class="nav-link">
-                Sandra Leo 
+                Sandra Leo
                 <a href="/assets/Resume.pdf" class="btn btn-dark btn-sm me-2" target="_blank">DownloadMyResume</a>
             </div>
-           
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/Home/About">WhoAmI?</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/Home/Projects">MyProjects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/Home/Contact">ContactMe</a></li>
-                </ul>
-           
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Home/About">WhoAmI?</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Home/Projects">MyProjects</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Home/Contact">ContactMe</a></li>
+            </ul>
+
         </div>
     </nav>
-
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
     <div class="container mt-5">
         @RenderBody()
     </div>
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
 

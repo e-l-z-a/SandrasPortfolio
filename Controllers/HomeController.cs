@@ -94,6 +94,34 @@ serverless functions,        and cloud storage, making it scalable and maintaina
                     GitHubLink = "https://github.com/e-l-z-a/FinanceManager",
                     LiveDemoLink = ""
                 },
+                 new Project
+                {
+                    Title = "AchillesChat",
+                    Description = @"AchillesChat combines structured knowledge with AI-powered semantic matching to deliver a friendly, character-driven chat experience. It’s a practical example of how <b>ML.NET</b> can enhance chatbots, while maintaining full control over persona-specific responses.",
+                    Technologies = @"<div>
+                        <span><b>🚀 Features</b> </span>
+                        
+                        <li>Persona-specific Q&A with speaker attribution (Achilles, Patroclus, or Both.</li>
+                        <li>Semantic similarity search using ML.NET (FeaturizeText + cosine similarity).</li>
+                        <li>Fallback small talk and unsure responses when no confident match is found.</li>
+                        <li>Integration with OpenAI GPT for out-of-scope questions.</li>
+                        <li>Minimal frontend chat interface with live messaging.</li>
+                    </div> 
+                    <div>
+                               
+                        <span><b>🛠️ Technologies Used</b></span>
+
+                        <li>⚙️ Backend - ASP.NET Core</li>
+                        <li>📊 AI/ML - ML.NET (text featurization + cosine similarity)</li>
+                        <li>🎨 Frontend - HTML, JavaScript</li>
+                        <li>💾 Data Storage - JSON file for knowledge base</li>
+                        <li>🤖 AI Integration : OpenAI GPT API</li>
+                       
+                        
+                    </div>",
+                    GitHubLink = "https://github.com/e-l-z-a/AchillesChat",
+                    LiveDemoLink = ""
+                },
                 new Project
                 {
                     Title = "Library Management SQL System",
